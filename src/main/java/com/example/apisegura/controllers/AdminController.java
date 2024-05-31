@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdminController {
 
     @GetMapping(value = "")
+    @PreAuthorize("hasRole('administrador')")
     public ResponseEntity<?> publicEndpoint() {
         return ResponseEntity.status(HttpStatus.OK).body("{ \"message\": \"Este es un endpoint de administrador. Podes ver esta respuesta porque tu usuario tiene el rol 'adminstrador'\"}");
     }

@@ -46,8 +46,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
                                 .requestMatchers("/api/public").permitAll()
-                                .requestMatchers("/api/admin/**").hasAuthority("administrador")
-                                .requestMatchers("/api/client/**").hasAuthority("cliente")
+                                //.requestMatchers("/api/admin/**").hasAuthority("administrador")
+                                //.requestMatchers("/api/client/**").hasAuthority("cliente")
                                 .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(oauth2ResourceServer ->
